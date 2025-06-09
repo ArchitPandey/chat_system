@@ -1,0 +1,6 @@
+persistence:
+  ## @param persistence.enabled Enable ZooKeeper data persistence using PVC. If false, use emptyDir
+  ##
+  enabled: false
+
+

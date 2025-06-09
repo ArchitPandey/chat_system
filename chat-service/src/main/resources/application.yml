@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: chat-service
+  r2dbc:
+    url: r2dbc:postgresql://localhost:30100/postgres
+    username: chat_admin
+    password: chat123
+
+app:
+  ws-connection:
+    machine-id: chat-server-machine
+    secret: chat-server-machine
+  kafka:
+    producer:
+      topic: chat-messages
+      bootstrap-servers: localhost:9092
+    consumer:
+      topic: chat-messages
+      bootstrap-servers: localhost:9092
+      auto-offset-reset: latest
+
+logging:
+  level:
+    root: info
+    org.apache.kafka: info
+    #com.homemade.chat_service.service.postgres.mappers: debug
+    org.springframework.r2dbc.core: DEBUG
+    io.r2dbc.postgresql.QUERY: DEBUG
+    io.r2dbc.postgresql.PARAM: DEBUG
